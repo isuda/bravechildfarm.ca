@@ -41,11 +41,42 @@
         <li><a class="active" href="contact-us.html">Contact Us</a></li>
       </ul>
     </nav>
+    <script>
+      function contactUs(event) {
+        event.preventDefault();
+        const formElement = document.getElementById("contact-us-form");
+        const data = new FormData(formElement);
+
+        const messageElement = document.createElement("span");
+        messageElement.innerText = "Thanks for submitting your question! We will respond as soon as we can.";
+        formElement.parentNode.replaceChild(messageElement, formElement);
+
+        fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLScJdeaoQ0ZgGsicxR_K4-moEYvDUZ-1xn3-xJ2hbX8uYRE2Fw/formResponse", {
+          method: 'post',
+          mode: 'no-cors',
+          body: data,
+        });
+      }
+    </script>
   </header>
   <main role="main" tabindex="-1">
-    <section class="contact">
+    <section class="contact-us">
       <article>
-        <h2>🚧 Coming Soon! 🚧</h2>
+        <img srcset="images/contact-us-400w.jpg,
+                     images/contact-us-800w.jpg 2x"
+             src="images/contact-us-400w.jpg"
+             alt="Contact Us">
+        <div class="body">
+            <h2>Question for us?</h2>
+            <p>
+              <form id="contact-us-form" action="#" onsubmit="contactUs(event)">
+                <label for="name">Name:</label> <input id="name" type="text" name="entry.2005620554" aria-label="Name" required>
+                <label for="email">Email:</label> <input id="email" type="email" name="entry.1045781291" aria-label="Email" required>
+                <label for="question">Question:</label> <textarea id="question" name="entry.839337160" aria-label="Question"></textarea>
+                <button type="submit">Submit</button>
+              </form>
+            </p>
+        </div>
       </article>
     </section>
   </main>

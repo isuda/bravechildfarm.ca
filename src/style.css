@@ -234,3 +234,23 @@ macro-carousel {
     --macro-carousel-slide-max-height: 30em;
 }
 
+#contact-us-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-us-form input, #contact-us-form textarea {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#contact-us-form button {
+    padding: 1em;
+    margin-top: 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1em;
+}
