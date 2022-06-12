@@ -257,3 +257,17 @@ macro-carousel {
     border-style: solid;
     border-radius: 1em;
 }
+
+.recipe h2 {
+   margin-top: 2em;
+}
+
+.recipe ol, .recipe ul {
+    margin-bottom: 1em;
+    margin-left: 2em;
+
+}
+
+.recipe ol li {
+    margin-bottom: 1em;
+}
